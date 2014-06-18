@@ -7,3 +7,5 @@ Creo una cuenta en sandbox.evernote.com
 Obtengo la API Key de Evernote (con acceso completo, para poder leer y editar notas)
 
 Descargo la API de https://github.com/evernote/evernote-sdk-android
+
+Estoy de pruebas
