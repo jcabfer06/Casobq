@@ -1,7 +1,5 @@
 package com.example.casobq;
 
-
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,6 +10,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.evernote.client.android;
 
 public class MainActivity extends Activity {
 	
@@ -31,16 +30,7 @@ public class MainActivity extends Activity {
         	String token;
         	
         	Toast.makeText(MainActivity.this, usuario.getText().toString(), Toast.LENGTH_LONG).show();
-        	
-        	EvernoteSession session = EvernoteSession.init(this, 
-        			"jcabfer06", 
-        			"f36faea248456605", 
-        			null, 
-        			null);
-        	 if (!session.isLoggedIn()) {
-        		 session.authenticate();
-        	 }
-        	 token = getAuthToken();
+        	token = getAuthToken();
         }
     };
 }

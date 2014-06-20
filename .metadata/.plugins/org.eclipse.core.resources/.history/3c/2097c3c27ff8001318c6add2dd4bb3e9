@@ -1,7 +1,5 @@
 package com.example.casobq;
 
-
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
@@ -32,13 +30,9 @@ public class MainActivity extends Activity {
         	
         	Toast.makeText(MainActivity.this, usuario.getText().toString(), Toast.LENGTH_LONG).show();
         	
-        	EvernoteSession session = EvernoteSession.init(this, 
-        			"jcabfer06", 
-        			"f36faea248456605", 
-        			null, 
-        			null);
+        	EvernoteSession session = EvernoteSession.init(...);
         	 if (!session.isLoggedIn()) {
-        		 session.authenticate();
+        		 session.authenticate(...);
         	 }
         	 token = getAuthToken();
         }

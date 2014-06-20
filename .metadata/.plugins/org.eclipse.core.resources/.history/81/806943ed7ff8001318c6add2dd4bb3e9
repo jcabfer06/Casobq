@@ -1,6 +1,6 @@
 package com.example.casobq;
 
-
+import com.evernote.client.android.EvernoteSession.EvernoteService;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -32,11 +32,7 @@ public class MainActivity extends Activity {
         	
         	Toast.makeText(MainActivity.this, usuario.getText().toString(), Toast.LENGTH_LONG).show();
         	
-        	EvernoteSession session = EvernoteSession.init(this, 
-        			"jcabfer06", 
-        			"f36faea248456605", 
-        			null, 
-        			null);
+        	EvernoteSession session = EvernoteSession.init(this, "jcabfer06", "f36faea248456605", null, null);
         	 if (!session.isLoggedIn()) {
         		 session.authenticate();
         	 }
