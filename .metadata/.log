@@ -1402,3 +1402,6 @@ java.lang.IllegalStateException: Circular dependencies cannot exist in RelativeL
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1450)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1426)
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2014-06-20 14:57:44.625
+!MESSAGE No valid Android XML Editor Delegate found for file /library/pom.xml [Res null, type null]

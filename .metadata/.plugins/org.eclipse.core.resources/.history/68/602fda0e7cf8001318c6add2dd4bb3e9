@@ -12,6 +12,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
+
+	private static String logtag = "log";
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +27,11 @@ public class MainActivity extends Activity {
     
     private OnClickListener loginListener = new OnClickListener() {
         public void onClick(View v) {
-        	TextView usuario = (TextView)findViewById(R.id.editTextUsuario);            
+        	TextView usuario = (TextView)findViewById(R.id.editTextUsuario);
+        	//Log.d(logtag,"onClick() called - start button");             
         	Toast.makeText(MainActivity.this, usuario.getText().toString(), Toast.LENGTH_LONG).show();
+          //Toast.makeText(MainActivity.this, "The Start button was clicked.", Toast.LENGTH_LONG).show();
+         // Log.d(logtag,"onClick() ended - start button");
         }
     };
 }

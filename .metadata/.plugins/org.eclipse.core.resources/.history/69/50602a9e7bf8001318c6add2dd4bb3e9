@@ -23,7 +23,7 @@
         android:text="Usuario" />
 
     <EditText
-        android:id="@+id/editTextUsuario"
+        android:id="@+id/editText1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView1"
@@ -35,7 +35,7 @@
     </EditText>
 
     <EditText
-        android:id="@+id/editTextPassword"
+        android:id="@+id/editText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView2"
@@ -48,9 +48,9 @@
         android:id="@+id/buttonLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editTextPassword"
-        android:layout_alignRight="@+id/editTextUsuario"
-        android:layout_below="@+id/editTextPassword"
+        android:layout_alignLeft="@+id/editText2"
+        android:layout_alignRight="@+id/editText1"
+        android:layout_below="@+id/editText2"
         android:layout_marginTop="21dp"
         android:text="Acceder a Evernote" />
 

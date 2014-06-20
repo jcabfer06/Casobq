@@ -11,3 +11,5 @@ Descargo la API de https://github.com/evernote/evernote-sdk-android
 He iniciado el proyecto vacío.
 
 Añado los campos de texto para introducir el usuario y la contraseña. También pongo un botón para acceder a Evernote.
+
+Le doy una funcionalidad al botón para ver que cuando lo pulso ocurre algo.
