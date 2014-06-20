@@ -8,4 +8,6 @@ Obtengo la API Key de Evernote (con acceso completo, para poder leer y editar no
 
 Descargo la API de https://github.com/evernote/evernote-sdk-android
 
-Estoy de prueba
+He iniciado el proyecto vacío.
+
+Añado los campos de texto para introducir el usuario y la contraseña. También pongo un botón para acceder a Evernote.
