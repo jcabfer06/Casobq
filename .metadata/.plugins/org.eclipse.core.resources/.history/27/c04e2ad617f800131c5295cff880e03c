@@ -1,0 +1,69 @@
+package com.example.tercero;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
+
+public class MainActivity extends Activity {
+
+	private static String logtag = "tercero";
+	
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        
+        
+        TextView contrasena = (TextView)findViewById(R.id.editTextContrasena);
+        
+        Button botoncito = (Button)findViewById(R.id.button1);
+        botoncito.setOnClickListener(startListener);
+    }
+    
+    private OnClickListener startListener = new OnClickListener() {
+        public void onClick(View v) {
+        	TextView usuario = (TextView)findViewById(R.id.editTextContrasena);
+        	Log.d(logtag,"onClick() called - start button");             
+        	Toast.makeText(MainActivity.this, usuario.getText().toString(), Toast.LENGTH_LONG).show();
+          //Toast.makeText(MainActivity.this, "The Start button was clicked.", Toast.LENGTH_LONG).show();
+          Log.d(logtag,"onClick() ended - start button");
+        }
+    };
+    
+    @Override
+    protected void onStart() {//activity is started and visible to the user
+     Log.d(logtag,"onStart() called");
+     super.onStart(); 
+    }
+    @Override
+    protected void onResume() {//activity was resumed and is visible again
+     Log.d(logtag,"onResume() called");
+     super.onResume();
+      
+    }
+    @Override
+    protected void onPause() { //device goes to sleep or another activity appears
+     Log.d(logtag,"onPause() called");//another activity is currently running (or user has pressed Home)
+     super.onPause();
+      
+    }
+    @Override
+    protected void onStop() { //the activity is not visible anymore
+     Log.d(logtag,"onStop() called");
+     super.onStop();
+      
+    }
+    @Override
+    protected void onDestroy() {//android has killed this activity
+      Log.d(logtag,"onDestroy() called");
+      super.onDestroy();
+    }
+    
+}
