@@ -21,6 +21,8 @@ El paso anterior no es válido. Lo que hago es incluir la librería de la API en e
 Modifico el AndroidManifest.xml para incluir los nuevos permisos de Internet, y para incluir la autentiación OAuth de la que 
 hace uso Evernote dentro de una Activity.
 
+Ya se obtienen las notas del usuario y se muestran en la pantalla inicial tras haberse autenticado.
+
 He agregado un menú desplegable para elegir si ordenar por fecha o por nombre. También agrego un botón para poder crear una nota.
 
 Agregada la nueva activity para crear notas nuevas (CrearNotas.java) y añadido el código para que aparezca cuando se 

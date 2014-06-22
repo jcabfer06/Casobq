@@ -28,14 +28,4 @@
         android:layout_alignParentTop="true"
         android:text="Crear Nota" />
 
-    <ListView
-        android:id="@+id/listView_notas"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_below="@+id/spinner1"
-        android:layout_centerHorizontal="true" >
-
-    </ListView>
-
 </RelativeLayout>

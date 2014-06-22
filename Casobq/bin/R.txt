@@ -249,7 +249,7 @@ int id activity_chooser_view_content 0x7f060025
 int id always 0x7f06000b
 int id beginning 0x7f060011
 int id buttonCrear 0x7f06003d
-int id button_guardar 0x7f060040
+int id button_guardar 0x7f060041
 int id checkbox 0x7f06002d
 int id collapseActionView 0x7f06000d
 int id default_activity_button 0x7f060028
@@ -258,8 +258,8 @@ int id disableHome 0x7f060008
 int id dropdown 0x7f06000f
 int id edit_query 0x7f060030
 int id end 0x7f060013
-int id esdk__switch_service 0x7f060042
-int id esdk__webview 0x7f060041
+int id esdk__switch_service 0x7f060043
+int id esdk__webview 0x7f060042
 int id expand_activities_button 0x7f060026
 int id expanded_menu 0x7f06002c
 int id home 0x7f060014
@@ -268,6 +268,7 @@ int id icon 0x7f06002a
 int id ifRoom 0x7f06000a
 int id image 0x7f060027
 int id listMode 0x7f060001
+int id listView_notas 0x7f06003e
 int id list_item 0x7f060029
 int id middle 0x7f060012
 int id never 0x7f060009
@@ -294,8 +295,8 @@ int id spinner1 0x7f06003c
 int id split_action_bar 0x7f06001e
 int id submit_area 0x7f060039
 int id tabMode 0x7f060002
-int id text_contenido 0x7f06003f
-int id text_titulo 0x7f06003e
+int id text_contenido 0x7f060040
+int id text_titulo 0x7f06003f
 int id title 0x7f06002b
 int id top_action_bar 0x7f060020
 int id up 0x7f060021
