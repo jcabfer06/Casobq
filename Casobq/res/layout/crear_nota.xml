@@ -4,27 +4,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    
     <EditText
-        android:id="@+id/text_title"
+        android:id="@+id/text_titulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dip"
         android:layout_marginRight="10dip"
         android:layout_marginTop="10dip"
-        android:singleLine="true"
         android:hint="Título"
-        />
+        android:singleLine="true" />
 
     <EditText
-        android:id="@+id/text_content"
+        android:id="@+id/text_contenido"
         android:layout_width="match_parent"
         android:layout_height="0dip"
-        android:layout_weight="1"
         android:layout_margin="10dip"
+        android:layout_weight="1"
         android:gravity="top"
-        android:hint="Contenido"
-        />
+        android:hint="Contenido" />
     
     <Button
         android:id="@+id/button_guardar"

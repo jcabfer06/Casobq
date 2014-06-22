@@ -294,8 +294,8 @@ int id spinner1 0x7f06003c
 int id split_action_bar 0x7f06001e
 int id submit_area 0x7f060039
 int id tabMode 0x7f060002
-int id text_content 0x7f06003f
-int id text_title 0x7f06003e
+int id text_contenido 0x7f06003f
+int id text_titulo 0x7f06003e
 int id title 0x7f06002b
 int id top_action_bar 0x7f060020
 int id up 0x7f060021

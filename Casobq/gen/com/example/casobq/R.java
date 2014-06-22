@@ -1134,8 +1134,8 @@ containing a value of this type.
         public static final int split_action_bar=0x7f06001e;
         public static final int submit_area=0x7f060039;
         public static final int tabMode=0x7f060002;
-        public static final int text_content=0x7f06003f;
-        public static final int text_title=0x7f06003e;
+        public static final int text_contenido=0x7f06003f;
+        public static final int text_titulo=0x7f06003e;
         public static final int title=0x7f06002b;
         public static final int top_action_bar=0x7f060020;
         public static final int up=0x7f060021;

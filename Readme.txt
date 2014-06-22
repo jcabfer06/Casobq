@@ -25,3 +25,6 @@ He agregado un menú desplegable para elegir si ordenar por fecha o por nombre. T
 
 Agregada la nueva activity para crear notas nuevas (CrearNotas.java) y añadido el código para que aparezca cuando se 
 aprieta el botón de crear notas.
+
+Ahora se pueden guardar notas al apretar el botón de guardado. Desde internet compruebo que las notas guardadas efectivamente
+se han guardado.

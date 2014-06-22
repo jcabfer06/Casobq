@@ -1,0 +1,85 @@
+package com.example.casobq;
+
+import com.evernote.android.sample.R;
+import com.evernote.client.android.EvernoteUtil;
+import com.evernote.edam.type.Note;
+import com.evernote.thrift.transport.TTransportException;
+
+import android.os.Bundle;
+/*import android.widget.Button;
+import android.widget.EditText;*/
+
+//import com.evernote.android.sample.R;
+//import com.evernote.client.android.EvernoteSession;
+
+import android.text.TextUtils;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+import android.app.Activity;
+/*import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;*/
+public class CrearNota extends Activity {
+
+	private EditText textoTitulo;
+	private EditText textoContenido;
+	private Button botonGuardar;
+	
+	public void onCreate(Bundle savedInstanceState) {
+	    super.onCreate(savedInstanceState);
+	    setContentView(R.layout.crear_nota);
+	    
+	    textoTitulo = (EditText)findViewById(R.id.text_titulo);
+	    textoContenido = (EditText)findViewById(R.id.text_contenido);
+	    botonGuardar = (Button)findViewById(R.id.button_guardar);
+	    
+
+	}
+	
+	//Función para guardar la nota
+	public void saveNote(View view) {
+	    String titulo = textoTitulo.getText().toString();
+	    String contenido = textoContenido.getText().toString();
+	    if (TextUtils.isEmpty(titulo) || TextUtils.isEmpty(contenido)) {
+	      Toast.makeText(getApplicationContext(), "Faltan campos por rellenar", Toast.LENGTH_LONG).show();
+	      return;
+	    }
+
+	    Note nota = new Note();
+	    nota.setTitle(titulo);
+
+	    //TODO: line breaks need to be converted to render in ENML
+	    nota.setContent(EvernoteUtil.NOTE_PREFIX + contenido + EvernoteUtil.NOTE_SUFFIX);
+
+	    if(!mEvernoteSession.getAuthenticationResult().isAppLinkedNotebook()) {
+	      //If User has selected a notebook guid, assign it now
+	      if (!TextUtils.isEmpty(mSelectedNotebookGuid)) {
+	        note.setNotebookGuid(mSelectedNotebookGuid);
+	      }
+	      showDialog(DIALOG_PROGRESS);
+	      try {
+	        mEvernoteSession.getClientFactory().createNoteStoreClient().createNote(note, mNoteCreateCallback);
+	      } catch (TTransportException exception) {
+	        Log.e(LOGTAG, "Error creating notestore", exception);
+	        Toast.makeText(getApplicationContext(), R.string.error_creating_notestore, Toast.LENGTH_LONG).show();
+	        removeDialog(DIALOG_PROGRESS);
+	      }
+	    } else {
+	      super.createNoteInAppLinkedNotebook(note, mNoteCreateCallback);
+	    }
+	  }
+	
+}
