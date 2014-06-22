@@ -30,3 +30,6 @@ aprieta el botón de crear notas.
 
 Ahora se pueden guardar notas al apretar el botón de guardado. Desde internet compruebo que las notas guardadas efectivamente
 se han guardado.
+
+Ya se muestran las notas en una lista, y se pueden ordenar tanto por fecha de creación como por orden alfabético (inverso, por el momento).
+También se vuelve a la pantalla anterior al guardar una nota nueva.

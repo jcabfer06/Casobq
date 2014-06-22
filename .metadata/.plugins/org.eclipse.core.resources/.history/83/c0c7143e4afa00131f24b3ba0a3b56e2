@@ -99,14 +99,11 @@ public class MainActivity extends Activity {
     	final int offset = 0;
         final int pageSize = 10;
         
-        //Resetear la vista de las notas
-        mAdapter.clear();
-        
         final NoteFilter filter = new NoteFilter();
         if(orden == 0) {
-        	filter.setOrder(NoteSortOrder.TITLE.getValue());
-        } else {
         	filter.setOrder(NoteSortOrder.UPDATED.getValue());
+        } else {
+        	filter.setOrder(NoteSortOrder.TITLE.getValue());
         }
         
         final NotesMetadataResultSpec spec = new NotesMetadataResultSpec();

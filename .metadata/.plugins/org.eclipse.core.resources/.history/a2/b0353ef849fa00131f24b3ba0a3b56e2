@@ -75,7 +75,7 @@ public class MainActivity extends Activity {
         listaNotas = (ListView)findViewById(R.id.listView_notas);
         listaNotas.setAdapter(mAdapter);
         
-        encontrarNotas(0);
+        encontrarNotas();
     }
     
     private OnItemSelectedListener cambiarOrden = new AdapterView.OnItemSelectedListener() {
@@ -83,7 +83,6 @@ public class MainActivity extends Activity {
             //Object item = parent.getItemAtPosition(pos);
     		int posicion = spinnerOrden.getSelectedItemPosition();
     		Toast.makeText(getApplicationContext(), "Posicion " + Integer.toString(posicion), Toast.LENGTH_LONG).show();
-    		encontrarNotas(posicion);
         }
     	public void onNothingSelected(AdapterView<?> parent) {
         }
@@ -95,19 +94,13 @@ public class MainActivity extends Activity {
     	}
     };
     
-    public void encontrarNotas(int orden){
+    public void encontrarNotas(){
     	final int offset = 0;
         final int pageSize = 10;
         
-        //Resetear la vista de las notas
-        mAdapter.clear();
-        
         final NoteFilter filter = new NoteFilter();
-        if(orden == 0) {
-        	filter.setOrder(NoteSortOrder.TITLE.getValue());
-        } else {
-        	filter.setOrder(NoteSortOrder.UPDATED.getValue());
-        }
+        filter.setOrder(NoteSortOrder.UPDATED.getValue());
+        //filter.setOrder(NoteSortOrder.TITLE.getValue());
         
         final NotesMetadataResultSpec spec = new NotesMetadataResultSpec();
         spec.setIncludeTitle(true);
