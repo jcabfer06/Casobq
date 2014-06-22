@@ -22,3 +22,6 @@ Modifico el AndroidManifest.xml para incluir los nuevos permisos de Internet, y 
 hace uso Evernote dentro de una Activity.
 
 He agregado un menú desplegable para elegir si ordenar por fecha o por nombre. También agrego un botón para poder crear una nota.
+
+Agregada la nueva activity para crear notas nuevas (CrearNotas.java) y añadido el código para que aparezca cuando se 
+aprieta el botón de crear notas.

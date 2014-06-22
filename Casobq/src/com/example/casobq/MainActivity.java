@@ -2,10 +2,12 @@ package com.example.casobq;
 
 
 
+//import com.evernote.android.sample.ImagePicker;
 import com.evernote.client.android.EvernoteSession;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -42,11 +44,17 @@ public class MainActivity extends Activity {
 		// Apply the adapter to the spinner
 		spinner.setAdapter(adapter);
      
+		Button botonCrear = (Button)findViewById(R.id.buttonCrear);
+		botonCrear.setOnClickListener(crearListener);
         /*Button botonLogin = (Button)findViewById(R.id.buttonLogin);
         botonLogin.setOnClickListener(loginListener);*/
     }
     
-    
+    private OnClickListener crearListener = new OnClickListener() {
+    	public void onClick(View v) {
+    		startActivity(new Intent(getApplicationContext(), CrearNota.class));
+    	}
+    };
     /*private OnClickListener loginListener = new OnClickListener() {
         public void onClick(View v) {
         	TextView usuario = (TextView)findViewById(R.id.editTextUsuario);   
