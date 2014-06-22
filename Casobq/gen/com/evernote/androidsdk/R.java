@@ -8,14 +8,14 @@ package com.evernote.androidsdk;
 
 public final class R {
 	public static final class id {
-		public static final int esdk__switch_service = 0x7f060042;
-		public static final int esdk__webview = 0x7f060041;
+		public static final int esdk__switch_service = 0x7f06003f;
+		public static final int esdk__webview = 0x7f06003e;
 	}
 	public static final class layout {
 		public static final int esdk__webview = 0x7f030019;
 	}
 	public static final class menu {
-		public static final int esdk__oauth = 0x7f0c0000;
+		public static final int esdk__oauth = 0x7f0d0000;
 	}
 	public static final class string {
 		public static final int esdk__err_api_setup = 0x7f050005;

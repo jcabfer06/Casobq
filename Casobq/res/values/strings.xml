@@ -3,5 +3,9 @@
 
     <string name="app_name">Casobq</string>
     <string name="hello_world">Hello world!</string>
+    <string-array name="Opciones">
+        <item>Ordenar por título</item>
+        <item >Ordenar por fecha</item>
+    </string-array>
 
 </resources>

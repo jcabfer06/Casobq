@@ -2,56 +2,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="top"
     tools:context="${packageName}.${activityClass}" >
 
-    <TextView
-        android:id="@+id/textView2"
+    <Spinner
+        android:id="@+id/spinner1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/textView1"
-        android:layout_marginTop="140dp"
-        android:text="Password" />
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="37dp"
-        android:layout_marginLeft="47dp"
-        android:text="Usuario" />
-
-    <EditText
-        android:id="@+id/editTextUsuario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView1"
-        android:layout_alignBottom="@+id/textView1"
-        android:layout_toRightOf="@+id/textView1"
-        android:ems="10" >
-
-        <requestFocus />
-    </EditText>
-
-    <EditText
-        android:id="@+id/editTextPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView2"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_toRightOf="@+id/textView2"
-        android:ems="10"
-        android:inputType="textPassword" />
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentTop="false"
+        android:layout_alignWithParentIfMissing="false"
+        android:layout_centerInParent="false"
+        android:layout_centerVertical="false"
+        android:layout_toRightOf="@+id/button1" />
 
     <Button
-        android:id="@+id/buttonLogin"
+        android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editTextPassword"
-        android:layout_alignRight="@+id/editTextUsuario"
-        android:layout_below="@+id/editTextPassword"
-        android:layout_marginTop="21dp"
-        android:text="Acceder a Evernote" />
+        android:layout_alignBottom="@+id/spinner1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="Crear Nota" />
 
 </RelativeLayout>

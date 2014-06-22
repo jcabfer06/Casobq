@@ -12,7 +12,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,17 +32,27 @@ public class MainActivity extends Activity {
         mEvernoteSession = EvernoteSession.getInstance(this, "jcabfer06", "f36faea248456605", EVERNOTE_SERVICE, true);
         mEvernoteSession.authenticate(this);
         
-        Button botonLogin = (Button)findViewById(R.id.buttonLogin);
-        botonLogin.setOnClickListener(loginListener);
+        
+	    Spinner spinner = (Spinner) findViewById(R.id.spinner1);
+		// Create an ArrayAdapter using the string array and a default spinner layout
+		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+		        R.array.Opciones, android.R.layout.simple_spinner_item);
+		// Specify the layout to use when the list of choices appears
+		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		// Apply the adapter to the spinner
+		spinner.setAdapter(adapter);
+     
+        /*Button botonLogin = (Button)findViewById(R.id.buttonLogin);
+        botonLogin.setOnClickListener(loginListener);*/
     }
     
     
-    private OnClickListener loginListener = new OnClickListener() {
+    /*private OnClickListener loginListener = new OnClickListener() {
         public void onClick(View v) {
         	TextView usuario = (TextView)findViewById(R.id.editTextUsuario);   
         	String token;
         	
         	Toast.makeText(MainActivity.this, usuario.getText().toString(), Toast.LENGTH_LONG).show();
         }
-    };
+    };*/
 }
