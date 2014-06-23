@@ -29,6 +29,9 @@
         <activity
             android:name=".CrearNota"
             android:label="Crear_Nota" />
+        <activity
+            android:name=".MostrarNota"
+            android:label="Mostrar_Nota" />
     </application>
 
 </manifest>

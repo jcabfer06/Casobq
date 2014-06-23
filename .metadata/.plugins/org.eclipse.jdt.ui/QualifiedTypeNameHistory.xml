@@ -2,5 +2,12 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="android.widget.Spinner"/>
 <fullyQualifiedTypeName name="android.widget.ArrayAdapter"/>
+<fullyQualifiedTypeName name="android.widget.EditText"/>
+<fullyQualifiedTypeName name="android.widget.Button"/>
+<fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
+<fullyQualifiedTypeName name="com.evernote.edam.type.NoteSortOrder"/>
 <fullyQualifiedTypeName name="com.example.casobq.R.id"/>
+<fullyQualifiedTypeName name="android.widget.AdapterView.OnItemSelectedListener"/>
+<fullyQualifiedTypeName name="android.widget.AdapterView"/>
+<fullyQualifiedTypeName name="android.widget.AdapterView.OnItemClickListener"/>
 </qualifiedTypeNameHistroy>
