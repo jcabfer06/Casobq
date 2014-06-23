@@ -1,24 +1,15 @@
 package com.example.casobq;
 
 
-
-//import com.evernote.android.sample.ImagePicker;
 import java.util.ArrayList;
 
 
-
-
-import java.util.Arrays;
-
-
-//import com.evernote.android.sample.R;
 import com.evernote.client.android.EvernoteSession;
 import com.evernote.client.android.OnClientCallback;
 import com.evernote.edam.notestore.NoteFilter;
 import com.evernote.edam.notestore.NoteMetadata;
 import com.evernote.edam.notestore.NotesMetadataList;
 import com.evernote.edam.notestore.NotesMetadataResultSpec;
-import com.evernote.edam.type.Note;
 import com.evernote.edam.type.NoteSortOrder;
 import com.evernote.thrift.transport.TTransportException;
 
@@ -26,9 +17,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -38,7 +26,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
@@ -51,7 +38,6 @@ public class MainActivity extends Activity {
 	private ArrayList<String> notesNames;
 	private ArrayList<String> notesGuid;
     private ArrayAdapter<String> mAdapter;
-    //private ArrayAdapter<String> guidAdapter;
     private ListView listaNotas;
 	protected String Titulo;
 	protected String Contenido;
@@ -65,27 +51,20 @@ public class MainActivity extends Activity {
         mEvernoteSession = EvernoteSession.getInstance(this, "jcabfer06", "f36faea248456605", EVERNOTE_SERVICE, true);
         mEvernoteSession.authenticate(this);
         
-        
-	    //Spinner spinner = (Spinner) findViewById(R.id.spinner1);
         spinnerOrden = (Spinner) findViewById(R.id.spinner1);
-		// Create an ArrayAdapter using the string array and a default spinner layout
 		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
 		        R.array.Opciones, android.R.layout.simple_spinner_item);
-		// Specify the layout to use when the list of choices appears
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		// Apply the adapter to the spinner
 		spinnerOrden.setAdapter(adapter);
      
 		Button botonCrear = (Button)findViewById(R.id.buttonCrear);
 		botonCrear.setOnClickListener(crearListener);
 		
-		//spinnerOrden = (Spinner)findViewById(R.id.spinner1);
 		spinnerOrden.setOnItemSelectedListener(cambiarOrden);
 		
 		notesNames = new ArrayList();
 		notesGuid = new ArrayList();
         mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, notesNames);
-        //guidAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, notesGuid);
         listaNotas = (ListView)findViewById(R.id.listView_notas);
         listaNotas.setAdapter(mAdapter);
         
@@ -99,35 +78,15 @@ public class MainActivity extends Activity {
     private OnItemClickListener ampliarNotaListener = new AdapterView.OnItemClickListener() {
  
     	public void onItemClick(AdapterView<?> parent, View view, int pos, long id) {
-            //Object item = parent.getItemAtPosition(pos);
-    		
-    		//int posicion;// = listaNotas.getSelectedItemPosition();
-    		//posicion = listaNotas.getC
-    		//Toast.makeText(getApplicationContext(), notesGuid.get(pos),  Toast.LENGTH_LONG).show();
     		Titulo = notesNames.get(pos);
     		getContenidoNota(pos);
-    		//Contenido = mEvernoteSession.getClientFactory().createNoteStoreClient().getNoteContent(notesGuid.get(pos), callb);
-    				
-    		//Toast.makeText(getApplicationContext(), "Titulo: " + Titulo, Toast.LENGTH_LONG).show();
-    		
-    		/*Intent i = new Intent(getApplicationContext(), MostrarNota.class);
-    		i.putExtra("Titulo", Titulo);
-    		i.putExtra("Contenido", Contenido);
-    		startActivity(i);*/
-    		
-    		//startActivity(new Intent(getApplicationContext(), MostrarNota.class));
-    		//Toast.makeText(getApplicationContext(), "Posicion " + Integer.toString(pos), Toast.LENGTH_LONG).show();
-    		//encontrarNotas(posicion);
+
         }
-    	//public void onNothingSelected(AdapterView<?> parent) {
-        //}
     };
     
     private OnItemSelectedListener cambiarOrden = new AdapterView.OnItemSelectedListener() {
     	public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-            //Object item = parent.getItemAtPosition(pos);
     		int posicion = spinnerOrden.getSelectedItemPosition();
-    		//Toast.makeText(getApplicationContext(), "Posicion " + Integer.toString(posicion), Toast.LENGTH_LONG).show();
     		encontrarNotas(posicion);
         }
     	public void onNothingSelected(AdapterView<?> parent) {
@@ -146,9 +105,7 @@ public class MainActivity extends Activity {
     	        final OnClientCallback<String> callback = new OnClientCallback<String>() {
     		            @Override
     		            public void onSuccess(String data) {
-    		            	//String resultado 
     		            	Contenido = data.substring(0, data.length()-tit.length()-3); 
-    		            	Toast.makeText(getApplicationContext(), "Contenido: " + Contenido, Toast.LENGTH_LONG).show();
     		            	Intent i = new Intent(getApplicationContext(), MostrarNota.class);
     		        		i.putExtra("Titulo", Titulo);
     		        		i.putExtra("Contenido", Contenido);
@@ -160,24 +117,8 @@ public class MainActivity extends Activity {
     		            	 Toast.makeText(getApplicationContext(), "No se encontraron notas", Toast.LENGTH_LONG).show();
     		            }
     	          };
-    	          
-    	          /*final OnClientCallback<Note> callbackNote = new OnClientCallback<Note>() {
-  		            @Override
-  		            public void onSuccess(Note nota) {
-  		            	Toast.makeText(getApplicationContext(), "Contenido: " + nota.getContent(), Toast.LENGTH_LONG).show();
-  		            }
-  		
-  		            @Override
-  		            public void onException(Exception exception) {
-  		            	 Toast.makeText(getApplicationContext(), "No se encontraron notas", Toast.LENGTH_LONG).show();
-  		            }
-  	          };*/
-    	        
-    	    	//mEvernoteSession.getClientFactory().createNoteStoreClient().getNoteContent(notesGuid.get(numero), callback);
-    	    	//mEvernoteSession.getClientFactory().createNoteStoreClient().getResourceSearchText(notesGuid.get(numero), callback);
+
     	    	mEvernoteSession.getClientFactory().createNoteStoreClient().getNoteSearchText(notesGuid.get(numero), true, false, callback);
-    	    	//mEvernoteSession.getClientFactory().createNoteStoreClient().getNote(notesGuid.get(numero), true, false, false, false, callbackNote);
-    	    		//.getNote(notesGuid.get(numero), true, false, false, false, callback);
     	        } catch (TTransportException exception){
     	        	 Toast.makeText(getApplicationContext(), "No se pudo crear el note store", Toast.LENGTH_LONG).show();
     	        }
@@ -205,7 +146,6 @@ public class MainActivity extends Activity {
         final OnClientCallback<NotesMetadataList> callback = new OnClientCallback<NotesMetadataList>() {
 	            @Override
 	            public void onSuccess(NotesMetadataList data) {
-	              //Toast.makeText(getApplicationContext(), "Notas encontradas", Toast.LENGTH_LONG).show();
 
 	            	//Hay que vaciar el array de guid para que no se haga cada vez mas grande
 	            	notesGuid.clear();
@@ -215,9 +155,7 @@ public class MainActivity extends Activity {
 	                notesNames.add(title);
 	                notesGuid.add(notaguid);
 	              }
-	              //Toast.makeText(getApplicationContext(), "p1 " + notesNames.get(0) + " p2 " + notesGuid.get(0), Toast.LENGTH_LONG).show();
 	              mAdapter.notifyDataSetChanged();
-	              //guidAdapter.notifyDataSetChanged();
 	            }
 	
 	            @Override

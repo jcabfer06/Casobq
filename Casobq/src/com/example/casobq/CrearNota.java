@@ -1,26 +1,18 @@
 package com.example.casobq;
 
-//import com.evernote.android.sample.R;
 import com.evernote.client.android.EvernoteUtil;
 import com.evernote.client.android.OnClientCallback;
 import com.evernote.edam.type.Note;
 import com.evernote.thrift.transport.TTransportException;
 
 import android.os.Bundle;
-/*import android.widget.Button;
-import android.widget.EditText;*/
-
-//import com.evernote.android.sample.R;
-//import com.evernote.client.android.EvernoteSession;
 
 import android.text.TextUtils;
-//import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-//import android.app.Activity;
 
 public class CrearNota extends MainActivity {
 
@@ -38,7 +30,6 @@ public class CrearNota extends MainActivity {
 	
 	    @Override
 	    public void onException(Exception exception) {
-	      //Log.e(LOGTAG, "Error saving note", exception);
 	      Toast.makeText(getApplicationContext(), "Error al guardar nota", Toast.LENGTH_LONG).show();
 	    }
 	  };
@@ -72,14 +63,12 @@ public class CrearNota extends MainActivity {
 	    Note nota = new Note();
 	    nota.setTitle(titulo);
 
-	    //TODO: line breaks need to be converted to render in ENML
 	    nota.setContent(EvernoteUtil.NOTE_PREFIX + contenido + EvernoteUtil.NOTE_SUFFIX);
 
 	      try {
 	        mEvernoteSession.getClientFactory().createNoteStoreClient().createNote(nota, mNoteCreateCallback);
 	      } catch (TTransportException exception) {
-	        //Log.e(LOGTAG, "Error creating notestore", exception);
-	        Toast.makeText(getApplicationContext(), "Error al crear note store", Toast.LENGTH_LONG).show();
+	    	  Toast.makeText(getApplicationContext(), "Error al crear note store", Toast.LENGTH_LONG).show();
 	      }
 	  }
 	

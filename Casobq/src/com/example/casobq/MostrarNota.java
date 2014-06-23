@@ -2,9 +2,6 @@ package com.example.casobq;
 
 import android.os.Bundle;
 import android.widget.TextView;
-import android.widget.Toast;
-//import android.widget.Button;
-//import android.widget.EditText;
 
 public class MostrarNota extends MainActivity{
 
@@ -25,7 +22,6 @@ public class MostrarNota extends MainActivity{
 	    
 	    mostrarTitulo = (TextView)findViewById(R.id.text_mostrar_titulo);
 	    mostrarContenido = (TextView)findViewById(R.id.text_mostrar_contenido);
-	    Toast.makeText(getApplicationContext(), "2 Contenido: " + contenido, Toast.LENGTH_LONG).show();
 	    mostrarTitulo.setText(titulo);
 	    mostrarContenido.setText(contenido);
 	}

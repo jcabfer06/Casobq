@@ -35,3 +35,5 @@ Ya se muestran las notas en una lista, y se pueden ordenar tanto por fecha de cr
 También se vuelve a la pantalla anterior al guardar una nota nueva.
 
 Las notas se muestran ahora en una nueva pantalla al pulsar sobre ellas. Se ve el titulo y debajo el contenido en texto plano.
+
+Limpiado un poco el código.
