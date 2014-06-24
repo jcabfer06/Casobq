@@ -20,12 +20,11 @@ public class CrearNota extends MainActivity {
 	private EditText textoContenido;
 	private Button botonGuardar;
 	
-	  //Callback que se va a llamar cuando se intente guardar una nota en el servidor
+	// Callback used as a result of creating a note in a normal notebook or a linked notebook
 	  private OnClientCallback<Note> mNoteCreateCallback = new OnClientCallback<Note>() {
 	    @Override
 	    public void onSuccess(Note note) {
 	      Toast.makeText(getApplicationContext(), "Nota guardada", Toast.LENGTH_LONG).show();
-	      //Al guardarla satisfactoriamente, se cierra la ventana actual
 	      finish();
 	    }
 	
@@ -57,8 +56,8 @@ public class CrearNota extends MainActivity {
 	    String titulo = textoTitulo.getText().toString();
 	    String contenido = textoContenido.getText().toString();
 	    if (TextUtils.isEmpty(titulo) || TextUtils.isEmpty(contenido)) {
-	    	Toast.makeText(getApplicationContext(), "Faltan campos por rellenar", Toast.LENGTH_LONG).show();
-	    	return;
+	      Toast.makeText(getApplicationContext(), "Faltan campos por rellenar", Toast.LENGTH_LONG).show();
+	      return;
 	    }
 
 	    Note nota = new Note();

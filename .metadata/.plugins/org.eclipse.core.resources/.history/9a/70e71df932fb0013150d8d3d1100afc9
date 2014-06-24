@@ -159,7 +159,6 @@ public class MainActivity extends Activity {
 	            	  notesNames.add(title);
 	            	  notesGuid.add(notaguid);
 	              }
-	              //Con esto se actualiza la vista de la lista de notas
 	              mAdapter.notifyDataSetChanged();
 	            }
 	

@@ -77,15 +77,15 @@ public class MainActivity extends Activity {
         encontrarNotas(0);
     }
     
-    //El callback que se ejecuta cuando se pincha en una nota para ampliarla y ver el contenido
+    
     private OnItemClickListener ampliarNotaListener = new AdapterView.OnItemClickListener() {
     	public void onItemClick(AdapterView<?> parent, View view, int pos, long id) {
     		Titulo = notesNames.get(pos);
     		getContenidoNota(pos);
+
         }
     };
     
-    //El callback que se ejecuta cuando se quiere reordenar la lista de notas
     private OnItemSelectedListener cambiarOrden = new AdapterView.OnItemSelectedListener() {
     	public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
     		int posicion = spinnerOrden.getSelectedItemPosition();
@@ -95,7 +95,6 @@ public class MainActivity extends Activity {
         }
     };
     
-    //Cuando se pincha en el boton de crear nueva nota
     private OnClickListener crearListener = new OnClickListener() {
     	public void onClick(View v) {
     		startActivity(new Intent(getApplicationContext(), CrearNota.class));
@@ -127,7 +126,6 @@ public class MainActivity extends Activity {
     	        }
     }
     
-    //Funcion que busca todas las notas. Las ordena segun el parametro "orden"
     public void encontrarNotas(int orden){
     	final int offset = 0;
         final int pageSize = 10;
@@ -154,12 +152,11 @@ public class MainActivity extends Activity {
 	            	//Hay que vaciar el array de guid para que no se haga cada vez mas grande
 	            	notesGuid.clear();
 	              for (NoteMetadata note : data.getNotes()) {
-	            	  String title = note.getTitle();
-	            	  String notaguid = note.getGuid();
-	            	  notesNames.add(title);
-	            	  notesGuid.add(notaguid);
+	                String title = note.getTitle();
+	                String notaguid = note.getGuid();
+	                notesNames.add(title);
+	                notesGuid.add(notaguid);
 	              }
-	              //Con esto se actualiza la vista de la lista de notas
 	              mAdapter.notifyDataSetChanged();
 	            }
 	
